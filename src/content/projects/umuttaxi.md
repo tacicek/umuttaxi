@@ -1,20 +1,20 @@
 ---
-title: "UmutTaxi - Premium Taxiservice Zürich-Schwarztenbach"
+title: "UmutTaxi - Premium Taxiservice Zürich-Schwerzenbach"
 slug: "umuttaxi"
-heroTitle: "Professioneller Taxiservice in Zürich-Schwarztenbach"
-description: "Premium Taxiservice für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer in Zürich-Schwarztenbach"
+heroTitle: "Professioneller Taxiservice in Zürich-Schwerzenbach"
+description: "Premium Taxiservice für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer in Zürich-Schwerzenbach"
 layout: "BaseLayout.astro"
 tags: ["taxi", "transport", "zürich", "flughafen", "limousine"]
 date: 2024-01-15
 seo:
-  title: "UmutTaxi - Premium Taxiservice Zürich-Schwarztenbach"
-  description: "Professioneller Taxiservice in Zürich-Schwarztenbach für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer"
+  title: "UmutTaxi - Premium Taxiservice Zürich-Schwerzenbach"
+  description: "Professioneller Taxiservice in Zürich-Schwerzenbach für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer"
   image: "/images/hero-mercedes.jpg"
 ---
 
 ## Projektübersicht
 
-UmutTaxi ist ein etablierter Taxiservice in Zürich-Schwarztenbach, der seit Jahren zuverlässige und professionelle Transportdienstleistungen anbietet. Das Unternehmen hat sich auf Premium-Services spezialisiert und bietet maßgeschneiderte Lösungen für verschiedene Transportbedürfnisse.
+UmutTaxi ist ein etablierter Taxiservice in Zürich-Schwerzenbach, der seit Jahren zuverlässige und professionelle Transportdienstleistungen anbietet. Das Unternehmen hat sich auf Premium-Services spezialisiert und bietet maßgeschneiderte Lösungen für verschiedene Transportbedürfnisse.
 
 Unser Service zeichnet sich durch Pünktlichkeit, Sauberkeit und höchste Qualitätsstandards aus. Alle unsere Fahrzeuge sind modern ausgestattet und werden regelmäßig gewartet, um die Sicherheit und den Komfort unserer Kunden zu gewährleisten.
 
@@ -93,7 +93,7 @@ Die Website wurde mit modernen Technologien entwickelt:
 
 ## Projektübersicht
 
-**UmutTaxi** ist ein lokales Taxiunternehmen mit Sitz in **Zürich-Schwarztenbach**. Wir bringen Sie zuverlässig zum Flughafen oder holen Sie dort ab – rund um die Uhr. Zusätzlich bieten wir exklusive Dienstleistungen wie:
+**UmutTaxi** ist ein lokales Taxiunternehmen mit Sitz in **Zürich-Schwerzenbach**. Wir bringen Sie zuverlässig zum Flughafen oder holen Sie dort ab – rund um die Uhr. Zusätzlich bieten wir exklusive Dienstleistungen wie:
 
 - 🚖 **Flughafentransfer** – pünktlich und stressfrei zum oder vom Flughafen Zürich
 - 🚐 **Limousinenservice** – elegante Fahrten für Geschäftskunden oder besondere Anlässe

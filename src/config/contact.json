@@ -2,7 +2,7 @@
   "company": {
     "name": "UmutTaxi",
     "fullName": "UmutTaxi GmbH",
-    "tagline": "Ihr zuverlässiger Partner für alle Taxidienstleistungen"
+    "tagline": "Ihr zuverlässiger Partner für alle Taxidienstleistungen in Zürich-Schwerzenbach"
   },
   "contact": {
     "phone": {
@@ -17,10 +17,10 @@
     },
     "address": {
       "street": "Bahnhofstrasse 123",
-      "city": "Zürich",
+      "city": "Schwerzenbach",
       "postalCode": "8001",
       "country": "Schweiz",
-      "full": "Bahnhofstrasse 123, 8001 Zürich, Schweiz"
+      "full": "Bahnhofstrasse 123, 8001 Schwerzenbach, Schweiz"
     }
   },
   "social": {
@@ -74,6 +74,6 @@
       "lng": 8.5417
     },
     "zoom": 15,
-    "title": "UmutTaxi - Zürich-Schwarztenbach"
+    "title": "UmutTaxi - Zürich-Schwerzenbach"
   }
 }

@@ -8,6 +8,7 @@ export interface Props {
 }
 
 const { title, description = "Professioneller Taxiservice in Zürich-Schwarztenbach für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer", image = "/images/Flughafen-taxi-service.webp" } = Astro.props;
+const { title, description = "Professioneller Taxiservice in Zürich-Schwerzenbach für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer", image = "/images/Flughafen-taxi-service.webp" } = Astro.props;
 const { contact } = contactData;
 
 // Structured data for local business
@@ -15,13 +16,14 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "UmutTaxi",
-  "description": "Premium Taxiservice in Zürich-Schwarztenbach",
+  "description": "Premium Taxiservice in Zürich-Schwerzenbach",
   "url": "https://umuttaxi.vercel.app",
   "telephone": contact.phone.primary,
   "email": contact.email.info,
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Zürich-Schwarztenbach",
+    "addressLocality": "Zürich-Schwerzenbach",
     "addressCountry": "CH"
   },
   "geo": {
@@ -96,6 +98,7 @@ const structuredData = {
     <meta name="robots" content="index, follow" />
     <meta name="author" content="UmutTaxi" />
     <meta name="keywords" content="taxi, transport, zürich, flughafen, limousine, schülertransport, hoteltransfer, schwarztenbach" />
+    <meta name="keywords" content="taxi, transport, zürich, flughafen, limousine, schülertransport, hoteltransfer, schwerzenbach" />
     <meta name="language" content="de" />
     <meta name="revisit-after" content="7 days" />
     

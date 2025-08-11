@@ -1,10 +1,10 @@
-# UmutTaxi - Premium Taxiservice Zürich-Schwarztenbach
+# UmutTaxi - Premium Taxiservice Zürich-Schwerzenbach
 
-Eine moderne, responsive Website für UmutTaxi, einen professionellen Taxiservice in Zürich-Schwarztenbach.
+Eine moderne, responsive Website für UmutTaxi, einen professionellen Taxiservice in Zürich-Schwerzenbach.
 
 ## 🚗 Über das Projekt
 
-UmutTaxi bietet zuverlässige Transportdienstleistungen in Zürich-Schwarztenbach:
+UmutTaxi bietet zuverlässige Transportdienstleistungen in Zürich-Schwerzenbach:
 
 - **Flughafentransfer** - Pünktlich und stressfrei zum oder vom Flughafen Zürich
 - **Limousinenservice** - Elegante Fahrten für Geschäftskunden oder besondere Anlässe
@@ -26,6 +26,7 @@ Das Projekt integriert Google Maps für die Standortanzeige:
 - **API Key**: Erforderlich für Google Maps JavaScript API
 - **Client ID**: `691118319740-v6ppj9irerj6q6o5aa658muaapqp5mqf.apps.googleusercontent.com`
 - **Standort**: Zürich-Schwarztenbach (47.3769, 8.5417)
+- **Standort**: Zürich-Schwerzenbach (47.3769, 8.5417)
 
 ### Google Maps API Key einrichten
 
@@ -226,7 +227,7 @@ Das Design-System verwendet eine angepasste Farbpalette:
 **UmutTaxi**
 - Telefon: +41 44 123 45 67
 - Email: info@umuttaxi.ch
-- Adresse: Zürich-Schwarztenbach, Schweiz
+- Adresse: Zürich-Schwerzenbach, Schweiz
 - Verfügbarkeit: 24/7
 
 ## 📄 Lizenz
