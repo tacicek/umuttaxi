@@ -3,96 +3,95 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://umuttaxi.vercel.app/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
-  <!-- Service Pages -->
+  <!-- Main Service Pages -->
   <url>
-    <loc>https://umuttaxi.vercel.app/flughafentransfer/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/flughafentransfer</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/limousinenservice/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/limousinenservice</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/schuelertransport/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/schuelertransport</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/hoteltransfer/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/hoteltransfer</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- About Us -->
+  <!-- About and Contact Pages -->
   <url>
-    <loc>https://umuttaxi.vercel.app/ueber-uns/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/ueber-uns</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
-  <!-- Contact -->
   <url>
-    <loc>https://umuttaxi.vercel.app/kontakt/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/kontakt</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Regional Taxi Service Landing Pages -->
   <url>
-    <loc>https://umuttaxi.vercel.app/taxi-service-zurich-flughafen/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/taxi-service-zurich-flughafen</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/taxi-service-greifensee/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/taxi-service-greifensee</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/taxi-service-uster/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/taxi-service-uster</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/taxi-service-faellanden/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/taxi-service-faellanden</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/taxi-service-duebendorf/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/taxi-service-duebendorf</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://umuttaxi.vercel.app/taxi-service-schwerzenbach/</loc>
-    <lastmod>2024-01-15</lastmod>
+    <loc>https://taxiumut.ch/taxi-service-schwerzenbach</loc>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
