@@ -1,0 +1,28 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const serviceData = {
+  serviceName: "Hoteltransfer",
+  serviceDescription: "Professioneller Hoteltransfer-Service für Gäste und Geschäftsreisende. Wir verbinden Sie zuverlässig mit Hotels in Zürich und der Umgebung.",
+  benefits: [
+    "Hotel-Pickup - Abholung direkt vom Hotel",
+    "Zentrumsverbindungen - Anbindung an alle wichtigen Hotels",
+    "Geschäftsreisen - Spezialisiert auf Business-Travel",
+    "Gepäckservice - Sichere Beförderung von Gepäck"
+  ],
+  process: [
+    "Buchung über Hotel oder direkt bei uns",
+    "Bestätigung mit allen Details",
+    "Pünktliche Abholung am Hotel",
+    "Komfortable Fahrt zum Ziel",
+    "Hilfe beim Gepäcktransport"
+  ],
+  images: [
+    "/images/Taxi service Hotel.webp",
+    "/images/Hoteltransfer.webp"
+  ],
+  heroImage: "/images/Hoteltransfer.webp"
+};
+---
+
+<ServicePage {...serviceData} />

@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GoogleMaps from '../components/GoogleMaps.astro';
+import contactData from '../config/contact.json';
+
+const { contact } = contactData;
+
+const title = "Taxi Service Dübendorf - 24/7 Taxi & Limousinenservice | UmutTaxi";
+const description = "Professioneller Taxi Service in Dübendorf. 24/7 Taxi, Limousinenservice und Flughafentransfer. Jetzt buchen: +41 76 560 95 28";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="relative py-32 lg:py-40 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-600"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/comfort.jpg');"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    
+    <div class="relative z-10 container mx-auto px-4 text-center text-white">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Taxi Service <span class="text-primary-500">Dübendorf</span>
+        </h1>
+        <p class="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+          Professioneller 24/7 Taxi Service in Dübendorf. Taxi, Limousinenservice und Flughafentransfer in die ganze Schweiz.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href={`tel:${contact.phone.primary}`} class="bg-primary-500 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <span class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              Jetzt anrufen
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+        <!-- About Dübendorf -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-black mb-6">Taxi Service in Dübendorf</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            <a href="https://de.wikipedia.org/wiki/D%C3%BCbendorf" target="_blank" rel="noopener noreferrer" class="text-primary-500 hover:text-primary-400">Dübendorf</a> ist ein wichtiger Wirtschaftsstandort im Kanton Zürich mit guter Verkehrsanbindung. 
+            Als lokaler Taxi Service bieten wir Ihnen professionelle Transportlösungen rund um die Uhr.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            Unser Standort in <a href="/taxi-service-schwarzenbach" class="text-primary-500 hover:text-primary-400">Schwarzenbach</a> ermöglicht es uns, 
+            schnell und zuverlässig auf Ihre Transportanfragen in Dübendorf zu reagieren.
+          </p>
+        </section>
+
+        <!-- Services -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-black mb-6">Unsere Dienstleistungen in Dübendorf</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 class="text-xl font-semibold text-black mb-3">Taxi Service</h3>
+              <p class="text-gray-600 mb-4">Professioneller Taxi Service für alle Ihre Transportbedürfnisse in Dübendorf.</p>
+              <a href="/flughafentransfer" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 class="text-xl font-semibold text-black mb-3">Limousinenservice</h3>
+              <p class="text-gray-600 mb-4">Elegante Limousinen für besondere Anlässe und Geschäftsreisen.</p>
+              <a href="/limousinenservice" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Popular Destinations -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-black mb-6">Beliebte Ziele von Dübendorf</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 class="text-xl font-semibold text-black mb-3">Zürich Flughafen</h3>
+              <p class="text-gray-600 mb-2">Direkter Transfer zum Flughafen</p>
+              <p class="text-primary-500 font-medium">Fahrtzeit: 25-35 Minuten</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 class="text-xl font-semibold text-black mb-3">Zürich Stadt</h3>
+              <p class="text-gray-600 mb-2">Transfer ins Stadtzentrum</p>
+              <p class="text-primary-500 font-medium">Fahrtzeit: 20-30 Minuten</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 class="text-xl font-semibold text-black mb-3">Greifensee</h3>
+              <p class="text-gray-600 mb-2">Idyllischer See in der Nähe</p>
+              <p class="text-primary-500 font-medium">Fahrtzeit: 20-25 Minuten</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+              <h3 class="text-xl font-semibold text-black mb-3">Uster</h3>
+              <p class="text-gray-600 mb-2">Moderne Stadt in der Nähe</p>
+              <p class="text-primary-500 font-medium">Fahrtzeit: 15-20 Minuten</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="bg-primary-50 border border-primary-200 rounded-lg p-6 text-center">
+          <h2 class="text-2xl font-semibold text-black mb-4">Bereit für Ihren Taxi Service?</h2>
+          <p class="text-gray-600 mb-4">Kontaktieren Sie uns für ein unverbindliches Angebot</p>
+          <a href={`tel:${contact.phone.primary}`} class="inline-block bg-primary-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-primary-400 transition-colors">
+            Jetzt anrufen
+          </a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="lg:col-span-1">
+        <!-- Contact Info -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6 border border-gray-200">
+          <div class="flex items-center mb-4">
+            <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.042 11.042 0 006.105 6.105l.774-1.548a1 1 0 011.21-.502l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <h3 class="font-semibold text-black ml-2">Kontakt</h3>
+          </div>
+          <div class="space-y-2">
+            <p class="text-gray-600">
+              <a href={`tel:${contact.phone.primary}`} class="text-primary-500 hover:text-primary-400">{contact.phone.primary}</a>
+            </p>
+            <p class="text-gray-600">
+              <a href={`mailto:${contact.email.info}`} class="text-primary-500 hover:text-primary-400">{contact.email.info}</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Related Services -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6 border border-gray-200">
+          <h3 class="text-lg font-semibold text-black mb-4">Weitere Taxi Services</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="/taxi-service-zurich-flughafen" class="text-primary-500 hover:text-primary-400 font-medium">
+                Taxi Service Zürich Flughafen
+              </a>
+            </li>
+            <li>
+              <a href="/taxi-service-greifensee" class="text-primary-500 hover:text-primary-400 font-medium">
+                Taxi Service Greifensee
+              </a>
+            </li>
+            <li>
+              <a href="/taxi-service-uster" class="text-primary-500 hover:text-primary-400 font-medium">
+                Taxi Service Uster
+              </a>
+            </li>
+            <li>
+              <a href="/taxi-service-faellanden" class="text-primary-500 hover:text-primary-400 font-medium">
+                Taxi Service Fällanden
+              </a>
+            </li>
+            <li>
+              <a href="/taxi-service-schwarzenbach" class="text-primary-500 hover:text-primary-400 font-medium">
+                Taxi Service Schwarzenbach
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Map -->
+        <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+          <h3 class="text-lg font-semibold text-black mb-4">Standort Dübendorf</h3>
+          <GoogleMaps />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

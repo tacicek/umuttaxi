@@ -1,0 +1,279 @@
+---
+import contactData from '../config/contact.json';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = "Professioneller Taxiservice in Zürich-Schwarztenbach für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer", image = "/images/Flughafen%20taxi%20service.webp" } = Astro.props;
+const { contact } = contactData;
+
+// Structured data for local business
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "UmutTaxi",
+  "description": "Premium Taxiservice in Zürich-Schwarztenbach",
+  "url": "https://umuttaxi.vercel.app",
+  "telephone": contact.phone.primary,
+  "email": contact.email.info,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Zürich-Schwarztenbach",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.3769,
+    "longitude": 8.5417
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "$$",
+  "currenciesAccepted": "CHF, EUR",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Taxi Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Flughafentransfer",
+          "description": "Airport transfer service"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Limousinenservice",
+          "description": "Luxury limousine service"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Schülertransport",
+          "description": "School transport service"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hoteltransfer",
+          "description": "Hotel transfer service"
+        }
+      }
+    ]
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/webp" href="/Umuttaxi-logo.webp" />
+    <link rel="apple-touch-icon" href="/Umuttaxi-logo.webp" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Generator -->
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Title -->
+    <title>{title}</title>
+    
+    <!-- Basic SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="UmutTaxi" />
+    <meta name="keywords" content="taxi, transport, zürich, flughafen, limousine, schülertransport, hoteltransfer, schwarztenbach" />
+    <meta name="language" content="de" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="UmutTaxi" />
+    <meta property="og:locale" content="de_DE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:site" content="@umuttaxi" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#FDE046" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/src/styles/global.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    
+    <!-- Google Analytics (if needed later) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    
+    <!-- Bing Webmaster Tools (if needed) -->
+    <!-- <meta name="msvalidate.01" content="BING_WEBMASTER_CODE" /> -->
+    
+    <!-- Yandex Webmaster (if needed) -->
+    <!-- <meta name="yandex-verification" content="YANDEX_VERIFICATION_CODE" /> -->
+  </head>
+  <body class="bg-white text-gray-900 font-sans">
+    <!-- Persistent Site Section -->
+    <div id="persistent-section" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-gray-200">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex items-center flex-shrink-0">
+            <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+              <img src="/Umuttaxi-logo.webp" alt="UmutTaxi Logo" class="w-10 h-10 md:w-14 md:h-14">
+            </a>
+          </div>
+          
+          <!-- Desktop Navigation Menu -->
+          <nav class="hidden md:flex items-center space-x-6">
+            <a href="/" class="text-black hover:text-primary-500 font-medium transition-colors">Startseite</a>
+            <a href="/ueber-uns" class="text-black hover:text-primary-500 font-medium transition-colors">Über uns</a>
+            <div class="relative group">
+              <button class="text-black hover:text-primary-500 font-medium transition-colors flex items-center space-x-1">
+                <span>Dienstleistungen</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="py-2">
+                  <a href="/flughafentransfer" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Flughafentransfer</a>
+                  <a href="/limousinenservice" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Limousinenservice</a>
+                  <a href="/schuelertransport" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Schülertransport</a>
+                  <a href="/hoteltransfer" class="block px-4 py-2 text-gray-700 hover:bg-primary-50 hover:text-primary-500 transition-colors">Hoteltransfer</a>
+                </div>
+              </div>
+            </div>
+            <a href="/kontakt" class="text-black hover:text-primary-500 font-medium transition-colors">Kontakt</a>
+          </nav>
+
+          <!-- Action Buttons and Mobile Menu -->
+          <div class="flex items-center space-x-2 md:space-x-3">
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex-shrink-0">
+              <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary-500 p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-2 md:space-x-3">
+              <a href={`tel:${contact.phone.primary}`} class="bg-primary-500 text-black px-2 py-1 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm hover:bg-primary-400 transition-colors whitespace-nowrap flex-shrink-0">
+                <span class="hidden sm:inline">Jetzt anrufen</span>
+                <span class="sm:hidden">📞</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200">
+          <nav class="flex flex-col space-y-3 pt-4">
+            <a href="/" class="text-black hover:text-primary-500 font-medium transition-colors">Startseite</a>
+            <a href="/ueber-uns" class="text-black hover:text-primary-500 font-medium transition-colors">Über uns</a>
+            <div class="space-y-2">
+              <div class="text-black font-medium">Dienstleistungen</div>
+              <div class="pl-4 space-y-2">
+                <a href="/flughafentransfer" class="block text-gray-600 hover:text-primary-500 transition-colors">Flughafentransfer</a>
+                <a href="/limousinenservice" class="block text-gray-600 hover:text-primary-500 transition-colors">Limousinenservice</a>
+                <a href="/schuelertransport" class="block text-gray-600 hover:text-primary-500 transition-colors">Schülertransport</a>
+                <a href="/hoteltransfer" class="block text-gray-600 hover:text-primary-500 transition-colors">Hoteltransfer</a>
+              </div>
+            </div>
+            <a href="/kontakt" class="text-black hover:text-primary-500 font-medium transition-colors">Kontakt</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-20 md:pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <div class="bg-primary-500 p-2 rounded-lg">
+                <img src="/Umuttaxi-logo.webp" alt="UmutTaxi Logo" class="w-10 h-10 md:w-14 md:h-14">
+              </div>
+            </div>
+            <p class="text-gray-300">
+              Professioneller Taxiservice in Zürich-Schwarztenbach
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Kontakt</h4>
+            <p class="text-gray-300">Telefon: {contact.phone.primary}</p>
+            <p class="text-gray-300">Email: {contact.email.info}</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-white">Dienstleistungen</h4>
+            <ul class="text-gray-300 space-y-2">
+              <li><a href="/flughafentransfer" class="hover:text-primary-500 transition-colors">Flughafentransfer</a></li>
+              <li><a href="/limousinenservice" class="hover:text-primary-500 transition-colors">Limousinenservice</a></li>
+              <li><a href="/schuelertransport" class="hover:text-primary-500 transition-colors">Schülertransport</a></li>
+              <li><a href="/hoteltransfer" class="hover:text-primary-500 transition-colors">Hoteltransfer</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+          <p>&copy; 2024 UmutTaxi. Alle Rechte vorbehalten.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileMenuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

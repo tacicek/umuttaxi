@@ -1,0 +1,29 @@
+{
+  "name": "UmutTaxi - Premium Taxiservice Zürich-Schwarztenbach",
+  "short_name": "UmutTaxi",
+  "description": "Professioneller Taxiservice für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer in Zürich-Schwarztenbach",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDE046",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/Umuttaxi-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Umuttaxi-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["transport", "business", "travel"],
+  "lang": "de",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

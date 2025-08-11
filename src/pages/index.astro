@@ -1,0 +1,348 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GoogleMaps from '../components/GoogleMaps.astro';
+import contactData from '../config/contact.json';
+
+const { contact } = contactData;
+
+const services = [
+  {
+    title: "Flughafentransfer",
+    description: "Pünktlich und stressfrei zum oder vom Flughafen Zürich",
+    icon: "✈️",
+    href: "/flughafentransfer",
+    features: ["24/7 Verfügbarkeit", "Flugverfolgung", "Gepäcktransport", "Pünktliche Abholung"]
+  },
+  {
+    title: "Limousinenservice",
+    description: "Elegante Fahrten für Geschäftskunden oder besondere Anlässe",
+    icon: "🚗",
+    href: "/limousinenservice",
+    features: ["Luxusfahrzeuge", "Chauffeur-Service", "Event-Transport", "Stadtrundfahrten"]
+  },
+  {
+    title: "Schülertransport",
+    description: "Sicherer Service für Schulkinder",
+    icon: "🏫",
+    href: "/schuelertransport",
+    features: ["Schulweg-Service", "Sicherheitsstandards", "Flexible Zeiten", "Elternkommunikation"]
+  },
+  {
+    title: "Hoteltransfer",
+    description: "Fahrten von/zum Hotel für Ihre Gäste",
+    icon: "🏨",
+    href: "/hoteltransfer",
+    features: ["Hotel-Pickup", "Zentrumsverbindungen", "Geschäftsreisen", "Gepäckservice"]
+  }
+];
+---
+
+<BaseLayout 
+  title="UmutTaxi - Premium Taxiservice in Zürich-Schwarztenbach"
+  description="Professioneller Taxiservice in Zürich-Schwarztenbach für Flughafentransfer, Limousinenservice, Schülertransport und Hoteltransfer"
+  image="/images/Flughafen%20taxi%20service.webp"
+>
+  <!-- Hero Section -->
+  <section class="relative py-32 lg:py-40 overflow-hidden">
+    <!-- Background with fallback -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-600"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('/images/Flughafen taxi service.webp');`}></div>
+    
+    <!-- Dark overlay for better text readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    
+    <div class="relative z-10 container mx-auto px-4 text-center text-white">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Willkommen bei <span class="text-primary-500">UmutTaxi</span>
+        </h1>
+        <p class="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+          Professioneller Taxiservice in Zürich-Schwarztenbach. Wir bringen Sie zuverlässig und komfortabel ans Ziel.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href={`tel:${contact.phone.primary}`} class="bg-primary-500 text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-400 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <span class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              Jetzt anrufen
+            </span>
+          </a>
+
+        </div>
+        
+        <!-- Additional info -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4">
+            <div class="text-2xl mb-2">🚗</div>
+            <h3 class="font-semibold mb-1">Premium Fahrzeuge</h3>
+            <p class="text-sm text-gray-200">Mercedes-Benz V-Class & Limousinen</p>
+          </div>
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4">
+            <div class="text-2xl mb-2">⏰</div>
+            <h3 class="font-semibold mb-1">24/7 Service</h3>
+            <p class="text-sm text-gray-200">Rund um die Uhr verfügbar</p>
+          </div>
+          <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4">
+            <div class="text-2xl mb-2">🎯</div>
+            <h3 class="font-semibold mb-1">Pünktlichkeit</h3>
+            <p class="text-sm text-gray-200">Immer 10 Min. vor der Zeit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black mb-4">Unsere Dienstleistungen</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Wir bieten maßgeschneiderte Transportlösungen für alle Ihre Bedürfnisse
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border border-gray-200">
+          <div class="w-full h-48 bg-cover bg-center bg-no-repeat rounded-lg mb-4 overflow-hidden" style="background-image: url('/images/Taxi airport.webp');">
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">{services[0].title}</h3>
+          <p class="text-gray-600 mb-4">{services[0].description}</p>
+          <ul class="space-y-1 mb-6">
+            {services[0].features.map((feature) => (
+              <li class="text-sm text-gray-500 flex items-center">
+                <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href={services[0].href} class="inline-block bg-primary-500 text-black px-4 py-2 rounded-lg font-medium hover:bg-primary-400 transition-colors">
+            Mehr erfahren
+          </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border border-gray-200">
+          <div class="w-full h-48 bg-cover bg-center bg-no-repeat rounded-lg mb-4 overflow-hidden" style="background-image: url('/images/Taxi service 2.webp');">
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">{services[1].title}</h3>
+          <p class="text-gray-600 mb-4">{services[1].description}</p>
+          <ul class="space-y-1 mb-6">
+            {services[1].features.map((feature) => (
+              <li class="text-sm text-gray-500 flex items-center">
+                <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href={services[1].href} class="inline-block bg-primary-500 text-black px-4 py-2 rounded-lg font-medium hover:bg-primary-400 transition-colors">
+            Mehr erfahren
+          </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border border-gray-200">
+          <div class="w-full h-48 bg-cover bg-center bg-no-repeat rounded-lg mb-4 overflow-hidden" style="background-image: url('/images/Taxi service 3.webp');">
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">{services[2].title}</h3>
+          <p class="text-gray-600 mb-4">{services[2].description}</p>
+          <ul class="space-y-1 mb-6">
+            {services[2].features.map((feature) => (
+              <li class="text-sm text-gray-500 flex items-center">
+                <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href={services[2].href} class="inline-block bg-primary-500 text-black px-4 py-2 rounded-lg font-medium hover:bg-primary-400 transition-colors">
+            Mehr erfahren
+          </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border border-gray-200">
+          <div class="w-full h-48 bg-cover bg-center bg-no-repeat rounded-lg mb-4 overflow-hidden" style="background-image: url('/images/Taxi service Hotel.webp');">
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">{services[3].title}</h3>
+          <p class="text-gray-600 mb-4">{services[3].description}</p>
+          <ul class="space-y-1 mb-6">
+            {services[3].features.map((feature) => (
+              <li class="text-sm text-gray-500 flex items-center">
+                <svg class="w-4 h-4 text-primary-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <a href={services[3].href} class="inline-block bg-primary-500 text-black px-4 py-2 rounded-lg font-medium hover:bg-primary-400 transition-colors">
+            Mehr erfahren
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black mb-4">Warum UmutTaxi?</h2>
+        <p class="text-xl text-gray-600">
+          Wir setzen auf Qualität, Zuverlässigkeit und Kundenzufriedenheit
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-full h-48 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-6xl mb-2">⏰</div>
+              <p class="text-primary-600 font-semibold">Pünktlichkeit</p>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">Pünktlichkeit</h3>
+          <p class="text-gray-600">Wir sind immer 10 Minuten vor der vereinbarten Zeit am Abholort</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-full h-48 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-6xl mb-2">🛡️</div>
+              <p class="text-primary-600 font-semibold">Sicherheit</p>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">Sicherheit</h3>
+          <p class="text-gray-600">Alle unsere Fahrzeuge entsprechen den höchsten Sicherheitsstandards</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-full h-48 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-6xl mb-2">🛋️</div>
+              <p class="text-primary-600 font-semibold">Komfort</p>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-black mb-2">Komfort</h3>
+          <p class="text-gray-600">Moderne Fahrzeuge mit höchstem Komfort für Ihre Reise</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black mb-4">Unser Standort</h2>
+        <p class="text-xl text-gray-600">
+          Zentrally gelegen in Zürich-Schwarztenbach für optimalen Service
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-bold text-black mb-4">Zürich-Schwarztenbach</h3>
+          <p class="text-gray-600 mb-6">
+            Unser Hauptsitz befindet sich in der Nähe des Flughafens Zürich, 
+            was uns ermöglicht, schnell und effizient auf Ihre Transportanfragen zu reagieren.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-700">Zürich-Schwarztenbach, Schweiz</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+              <span class="text-gray-700">{contact.phone.primary}</span>
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span class="text-gray-700">{contact.email.info}</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <GoogleMaps />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Taxi Services in der Region -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black mb-4">Taxi Services in der Region</h2>
+        <p class="text-xl text-gray-600">
+          Professioneller Taxi Service in allen wichtigen Gemeinden der Region Zürich
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-black mb-3">Zürich Flughafen</h3>
+          <p class="text-gray-600 mb-4">24/7 Flughafentransfer und Taxi Service am Flughafen Zürich</p>
+          <a href="/taxi-service-zurich-flughafen" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-black mb-3">Greifensee</h3>
+          <p class="text-gray-600 mb-4">Taxi Service in der idyllischen Gemeinde am Greifensee</p>
+          <a href="/taxi-service-greifensee" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-black mb-3">Uster</h3>
+          <p class="text-gray-600 mb-4">Professioneller Taxi Service in der modernen Stadt Uster</p>
+          <a href="/taxi-service-uster" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-black mb-3">Fällanden</h3>
+          <p class="text-gray-600 mb-4">Zuverlässiger Taxi Service in der ruhigen Gemeinde Fällanden</p>
+          <a href="/taxi-service-faellanden" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-black mb-3">Dübendorf</h3>
+          <p class="text-gray-600 mb-4">Taxi Service im wichtigen Wirtschaftsstandort Dübendorf</p>
+          <a href="/taxi-service-duebendorf" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-6 hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold text-black mb-3">Schwarzenbach</h3>
+          <p class="text-gray-600 mb-4">Unser Hauptsitz - optimaler Ausgangspunkt für alle Taxi Services</p>
+          <a href="/taxi-service-schwarzenbach" class="text-primary-500 hover:text-primary-400 font-medium">Mehr erfahren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-primary-500 text-black py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6">Bereit für Ihre nächste Fahrt?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Kontaktieren Sie uns noch heute für ein unverbindliches Angebot oder eine sofortige Buchung.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`tel:${contact.phone.primary}`} class="bg-black text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors">
+          Jetzt anrufen
+        </a>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

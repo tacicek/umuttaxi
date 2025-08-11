@@ -1,0 +1,6 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- U shape -->
+  <path d="M8 8h6v12c0 3.3 2.7 6 6 6s6-2.7 6-6V8h6v12c0 6.6-5.4 12-12 12s-12-5.4-12-12V8z" fill="black"/>
+  <!-- T inside U -->
+  <path d="M14 12h4v8h4v-8h4v-2h-12v2z" fill="white"/>
+</svg>

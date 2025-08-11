@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GoogleMaps from '../components/GoogleMaps.astro';
+import contactData from '../config/contact.json';
+
+const { contact } = contactData;
+---
+
+<BaseLayout 
+  title="Kontakt - UmutTaxi Zürich-Schwarztenbach"
+  description="Kontaktieren Sie UmutTaxi für alle Ihre Transportbedürfnisse. Wir sind 24/7 für Sie da."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Kontakt</h1>
+      <p class="text-xl max-w-3xl mx-auto">
+        Wir sind 24/7 für Sie da. Kontaktieren Sie uns für alle Ihre Transportbedürfnisse.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Senden Sie uns eine Nachricht</h2>
+          <form 
+            name="contact-form" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            class="space-y-6"
+          >
+            <!-- Hidden inputs for Netlify -->
+            <input type="hidden" name="form-name" value="contact-form" />
+            <p class="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefonnummer *</label>
+                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+            </div>
+            
+            <div>
+              <label for="pickup" class="block text-sm font-medium text-gray-700 mb-2">Abholadresse *</label>
+              <input type="text" id="pickup" name="pickup" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+            </div>
+            
+            <div>
+              <label for="destination" class="block text-sm font-medium text-gray-700 mb-2">Zieladresse *</label>
+              <input type="text" id="destination" name="destination" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+            </div>
+            
+            <div>
+              <label for="datetime" class="block text-sm font-medium text-gray-700 mb-2">Datum und Uhrzeit *</label>
+              <input type="datetime-local" id="datetime" name="datetime" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+            </div>
+            
+            <div>
+              <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Gewünschter Service</label>
+              <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                <option value="">Bitte wählen Sie einen Service</option>
+                <option value="flughafentransfer">Flughafentransfer</option>
+                <option value="limousinenservice">Limousinenservice</option>
+                <option value="schuelertransport">Schülertransport</option>
+                <option value="hoteltransfer">Hoteltransfer</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Nachricht</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+              Nachricht senden
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">Kontaktinformationen</h2>
+          
+          <div class="space-y-8">
+            <!-- Phone -->
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Telefon</h3>
+                <p class="text-gray-600 mb-1">
+                  <a href={`tel:${contact.phone.primary}`} class="text-primary-600 hover:text-primary-700 font-medium">{contact.phone.primary}</a>
+                </p>
+                <p class="text-sm text-gray-500">24/7 verfügbar</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">E-Mail</h3>
+                <p class="text-gray-600">
+                  <a href={`mailto:${contact.email.info}`} class="text-primary-600 hover:text-primary-700 font-medium">{contact.email.info}</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Adresse</h3>
+                <p class="text-gray-600">
+                  {contactData.company.name}<br>
+                  {contact.address.full}
+                </p>
+              </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Öffnungszeiten</h3>
+                <p class="text-gray-600">
+                  Montag - Sonntag: 24/7<br>
+                  Feiertage: 24/7
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps -->
+          <div class="mt-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Standort</h3>
+            <GoogleMaps height="300px" showMarker={true} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Häufig gestellte Fragen</h2>
+        <p class="text-xl text-gray-600">
+          Antworten auf die wichtigsten Fragen
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Wie weit im Voraus sollte ich buchen?</h3>
+          <p class="text-gray-600">
+            Für Flughafentransfers empfehlen wir eine Buchung mindestens 24 Stunden im Voraus. Für andere Services können Sie auch kurzfristig buchen.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Was passiert bei Flugverspätungen?</h3>
+          <p class="text-gray-600">
+            Wir überwachen automatisch alle Flüge und passen unsere Abholzeiten entsprechend an. Keine zusätzlichen Kosten bei Verspätungen.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Kann ich Gepäck transportieren lassen?</h3>
+          <p class="text-gray-600">
+            Ja, alle unsere Fahrzeuge haben ausreichend Platz für Gepäck. Wir helfen Ihnen gerne beim Ein- und Ausladen.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Welche Zahlungsmethoden akzeptieren Sie?</h3>
+          <p class="text-gray-600">
+            Wir akzeptieren Bargeld, Kreditkarten und Überweisung. Für Geschäftskunden bieten wir auch Rechnungsstellung an.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const serviceData = {
+  serviceName: "Limousinenservice",
+  serviceDescription: "Erleben Sie Luxus und Komfort mit unserem exklusiven Limousinenservice. Perfekt für Geschäftsreisen, Hochzeiten, Events und besondere Anlässe.",
+  benefits: [
+    "Luxusfahrzeuge - Moderne Limousinen und Premium-Fahrzeuge",
+    "Chauffeur-Service - Professionelle und diskrete Fahrer",
+    "Event-Transport - Spezialisiert auf Hochzeiten und Events",
+    "Stadtrundfahrten - Entdecken Sie Zürich in Stil"
+  ],
+  process: [
+    "Beratung und Angebotserstellung",
+    "Fahrzeugauswahl und Terminplanung",
+    "Pünktliche Abholung am vereinbarten Ort",
+    "Komfortable Fahrt mit Chauffeur-Service",
+    "Professioneller Service während der gesamten Fahrt"
+  ],
+  images: [
+    "/images/Taxi service 2.webp",
+    "/images/Limousinenservice.webp"
+  ],
+  heroImage: "/images/Limousinenservice.webp"
+};
+---
+
+<ServicePage {...serviceData} />

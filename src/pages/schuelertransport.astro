@@ -1,0 +1,28 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const serviceData = {
+  serviceName: "Schülertransport",
+  serviceDescription: "Sicherer und zuverlässiger Schülertransport in Zürich-Schwarztenbach. Wir bringen Ihre Kinder pünktlich und sicher zur Schule und wieder nach Hause.",
+  benefits: [
+    "Schulweg-Service - Pünktliche Abholung und Ankunft",
+    "Sicherheitsstandards - Alle Fahrzeuge entsprechen höchsten Sicherheitsanforderungen",
+    "Flexible Zeiten - Anpassung an Schulzeiten und Ferien",
+    "Elternkommunikation - Regelmäßige Updates und transparente Kommunikation"
+  ],
+  process: [
+    "Anmeldung und Beratung mit den Eltern",
+    "Festlegung der Abholzeiten und Routen",
+    "Einführung der Kinder und Fahrer",
+    "Regelmäßiger Transport zur Schule",
+    "Überwachung und Qualitätskontrolle"
+  ],
+  images: [
+    "/images/Taxi service 3.webp",
+    "/images/Schulertransport.webp"
+  ],
+  heroImage: "/images/Schulertransport.webp"
+};
+---
+
+<ServicePage {...serviceData} />

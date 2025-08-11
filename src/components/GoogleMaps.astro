@@ -1,0 +1,54 @@
+---
+import contactData from '../config/contact.json';
+
+const { contact } = contactData;
+
+// Get map coordinates from contact data
+const { map } = contactData;
+const { coordinates, zoom, title } = map;
+
+// Simple Google Maps iframe URL (no API key needed)
+const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.5!2d${coordinates.lng}!3d${coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z${zoom}!5e0!3m2!1sde!2sch!4v1`;
+
+// Fallback coordinates for when iframe fails to load
+const fallbackCoords = `${coordinates.lat},${coordinates.lng}`;
+---
+
+<div class="w-full h-64 bg-gray-200 rounded-lg overflow-hidden relative">
+  <!-- Google Maps iframe -->
+  <iframe
+    src={mapUrl}
+    width="100%"
+    height="100%"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title={title}
+    class="w-full h-full"
+  >
+  </iframe>
+  
+  <!-- Fallback content when iframe fails to load -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 p-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
+    <div class="text-center">
+      <svg class="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      </svg>
+      <h3 class="text-lg font-semibold text-black mb-2">UmutTaxi Standort</h3>
+      <p class="text-gray-600 text-sm">
+        {contact.address.full}<br>
+        <span class="text-primary-500 font-medium">{contact.phone.primary}</span>
+      </p>
+      <a 
+        href={`https://www.google.com/maps?q=${fallbackCoords}`} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-block mt-2 px-4 py-2 bg-primary-500 text-black rounded-lg text-sm font-medium hover:bg-primary-400 transition-colors"
+      >
+        In Google Maps öffnen
+      </a>
+    </div>
+  </div>
+</div>

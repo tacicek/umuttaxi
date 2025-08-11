@@ -1,0 +1,28 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+
+const serviceData = {
+  serviceName: "Flughafentransfer",
+  serviceDescription: "Unser Flughafentransfer-Service bietet zuverlässige Verbindungen zum und vom Flughafen Zürich. Wir verstehen, dass pünktliche An- und Abreise entscheidend ist, daher garantieren wir höchste Qualität und Zuverlässigkeit.",
+  benefits: [
+    "Pünktliche Abholung - Wir sind immer 10 Minuten vor der vereinbarten Zeit am Abholort",
+    "Flugverfolgung - Automatische Überwachung von Verspätungen",
+    "Gepäcktransport - Sichere Beförderung von Gepäck und sperrigen Gegenständen",
+    "24/7 Verfügbarkeit - Service rund um die Uhr, auch an Feiertagen"
+  ],
+  process: [
+    "Buchung über Telefon, Email oder Online-Formular",
+    "Bestätigung mit allen Details per SMS oder Email",
+    "Pünktliche Abholung am vereinbarten Ort",
+    "Komfortable Fahrt zum Flughafen oder nach Hause",
+    "Hilfe beim Ein- und Ausladen des Gepäcks"
+  ],
+  images: [
+    "/images/Taxi airport.webp",
+    "/images/Flughafentransfer.webp"
+  ],
+  heroImage: "/images/Flughafentransfer.webp"
+};
+---
+
+<ServicePage {...serviceData} />

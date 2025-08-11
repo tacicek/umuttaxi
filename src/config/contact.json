@@ -1,0 +1,79 @@
+{
+  "company": {
+    "name": "UmutTaxi",
+    "fullName": "UmutTaxi GmbH",
+    "tagline": "Ihr zuverlässiger Partner für alle Taxidienstleistungen"
+  },
+  "contact": {
+    "phone": {
+      "primary": "+41 76 560 95 28",
+      "mobile": "+41 76 560 95 28",
+      "whatsapp": "+41 76 560 95 28"
+    },
+    "email": {
+      "info": "adem.polat03@hotmail.com",
+      "booking": "adem.polat03@hotmail.com",
+      "support": "adem.polat03@hotmail.com"
+    },
+    "address": {
+      "street": "Bahnhofstrasse 123",
+      "city": "Zürich",
+      "postalCode": "8001",
+      "country": "Schweiz",
+      "full": "Bahnhofstrasse 123, 8001 Zürich, Schweiz"
+    }
+  },
+  "social": {
+    "website": "https://umuttaxi.ch",
+    "facebook": "https://facebook.com/umuttaxi",
+    "instagram": "https://instagram.com/umuttaxi",
+    "linkedin": "https://linkedin.com/company/umuttaxi"
+  },
+  "business": {
+    "hours": {
+      "monday": "24/7",
+      "tuesday": "24/7",
+      "wednesday": "24/7",
+      "thursday": "24/7",
+      "friday": "24/7",
+      "saturday": "24/7",
+      "sunday": "24/7"
+    },
+    "emergency": "24/7 verfügbar",
+    "languages": ["Deutsch", "Türkçe", "English", "Français", "Italiano"]
+  },
+  "services": {
+    "airport": "Flughafentransfer",
+    "hotel": "Hoteltransfer",
+    "limousine": "Limousinenservice",
+    "school": "Schülertransport",
+    "business": "Geschäftstransfer",
+    "events": "Eventtransport"
+  },
+  "locations": {
+    "primary": "Zürich",
+    "cities": [
+      "Zürich",
+      "Genf",
+      "Basel",
+      "Bern",
+      "Luzern",
+      "St. Gallen",
+      "Winterthur"
+    ],
+    "airports": [
+      "Zürich Flughafen (ZRH)",
+      "Genf Flughafen (GVA)",
+      "Basel Flughafen (BSL)",
+      "Bern Flughafen (BRN)"
+    ]
+  },
+  "map": {
+    "coordinates": {
+      "lat": 47.3769,
+      "lng": 8.5417
+    },
+    "zoom": 15,
+    "title": "UmutTaxi - Zürich-Schwarztenbach"
+  }
+}
