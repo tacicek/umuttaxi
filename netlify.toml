@@ -5,9 +5,8 @@
 # Site ID for existing taxiumut.ch domain
 [build.environment]
   NETLIFY_SITE_ID = "polite-praline-4c4b02"
-
-[build.environment]
   NODE_VERSION = "18"
+  NETLIFY_EMAILS = "adem.polat03@hotmail.com,tuncaycicek@outlook.com"
 
 [context.production]
   command = "npm run build"
@@ -17,6 +16,3 @@
   from = "/home"
   to = "/"
   status = 301
-
-[context.production.environment]
-  NETLIFY_EMAILS = "adem.polat03@hotmail.com,tuncaycicek@outlook.com"
