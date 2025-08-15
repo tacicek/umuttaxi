@@ -3,10 +3,11 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://umuttaxi.vercel.app',
+  site: 'https://taxiumut.ch',
   base: '/',
   trailingSlash: 'never',
   build: {
-    assets: 'assets'
+    assets: 'assets',
+    format: 'directory'
   }
 });

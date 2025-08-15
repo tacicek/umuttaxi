@@ -12,7 +12,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "vercel-build": "astro build"
+    "vercel-build": "astro build",
+    "netlify-build": "astro build"
   },
   "dependencies": {
     "astro": "^4.0.0",

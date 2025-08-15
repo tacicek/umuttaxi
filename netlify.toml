@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "npm ci && npm run build"
 
 # Site ID for existing taxiumut.ch domain
 [build.environment]
@@ -9,7 +9,7 @@
   NETLIFY_EMAILS = "adem.polat03@hotmail.com,tuncaycicek@outlook.com"
 
 [context.production]
-  command = "npm run build"
+  command = "npm ci && npm run build"
   publish = "dist"
 
 [[redirects]]
