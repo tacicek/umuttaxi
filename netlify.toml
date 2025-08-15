@@ -2,6 +2,11 @@
   publish = "dist"
   command = "npm run build"
 
+# Site ID for existing taxiumut.ch domain
+# Replace with your actual Site ID from Netlify dashboard
+[build.environment]
+  NETLIFY_SITE_ID = "YOUR_SITE_ID_HERE"
+
 [build.environment]
   NODE_VERSION = "18"
 
