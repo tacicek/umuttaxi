@@ -1,0 +1,22 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+# Form notifications
+[build.processing.html]
+  pretty_urls = true
+
+# Email notifications for forms
+[[plugins]]
+  package = "@netlify/plugin-forms"
+
+[context.production.environment]
+  NETLIFY_EMAILS = "adem.polat03@hotmail.com,tuncaycicek@outlook.com"

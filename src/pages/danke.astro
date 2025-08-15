@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import contactData from '../config/contact.json';
+
+const { contact } = contactData;
+---
+
+<BaseLayout 
+  title="Vielen Dank - UmutTaxi"
+  description="Vielen Dank für Ihre Buchungsanfrage. Wir werden uns schnellstmöglich bei Ihnen melden."
+>
+  <!-- Thank You Section -->
+  <section class="py-32 bg-gradient-to-br from-primary-500 to-primary-600">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-xl p-8">
+        <div class="mb-6">
+          <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <h1 class="text-3xl font-bold text-black mb-4">Vielen Dank!</h1>
+          <p class="text-lg text-gray-600 mb-6">
+            Ihre Buchungsanfrage wurde erfolgreich übermittelt. Wir werden uns schnellstmöglich bei Ihnen melden.
+          </p>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg p-6 mb-6">
+          <h2 class="text-xl font-semibold text-black mb-4">Was passiert als nächstes?</h2>
+          <div class="space-y-3 text-left">
+            <div class="flex items-start">
+              <div class="w-6 h-6 bg-primary-500 text-black rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</div>
+              <p class="text-gray-600">Wir prüfen Ihre Anfrage und die Verfügbarkeit</p>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 bg-primary-500 text-black rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</div>
+              <p class="text-gray-600">Sie erhalten innerhalb von 30 Minuten eine Bestätigung</p>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 bg-primary-500 text-black rounded-full flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</div>
+              <p class="text-gray-600">Wir sind pünktlich am vereinbarten Ort</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-200 pt-6">
+          <h3 class="text-lg font-semibold text-black mb-3">Dringende Anfragen?</h3>
+          <p class="text-gray-600 mb-4">
+            Für sofortige Buchungen oder dringende Anfragen rufen Sie uns direkt an:
+          </p>
+          <a href={`tel:${contact.phone.primary}`} class="inline-block bg-primary-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-primary-400 transition-colors">
+            <span class="flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              {contact.phone.primary}
+            </span>
+          </a>
+        </div>
+        
+        <div class="mt-8">
+          <a href="/" class="text-primary-500 hover:text-primary-400 font-medium">
+            ← Zurück zur Startseite
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
