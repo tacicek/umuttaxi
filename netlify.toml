@@ -3,9 +3,8 @@
   command = "npm run build"
 
 # Site ID for existing taxiumut.ch domain
-# Replace with your actual Site ID from Netlify dashboard
 [build.environment]
-  NETLIFY_SITE_ID = "YOUR_SITE_ID_HERE"
+  NETLIFY_SITE_ID = "polite-praline-4c4b02"
 
 [build.environment]
   NODE_VERSION = "18"
