@@ -145,11 +145,17 @@ const services = [
         <div id="step-2" class="booking-step hidden">
           <h3 class="text-lg font-semibold text-black mb-4">Schritt 2: Fahrtdetails</h3>
           <form 
-            action="https://getform.io/f/bejjgwea"
+            action="https://formsubmit.co/adem.polat03@hotmail.com"
             method="POST"
             id="booking-form-step2"
             class="space-y-4"
           >
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_next" value="https://umuttaxi.ch/danke">
+            <input type="hidden" name="_subject" value="Neue Taxi-Buchungsanfrage von UmutTaxi Website">
+            <input type="hidden" name="_cc" value="tuncaycicek@outlook.com">
+            <input type="hidden" name="_captcha" value="false">
+            
             <!-- Hidden fields for step 1 data -->
             <input type="hidden" id="hidden-firstName" name="firstName" />
             <input type="hidden" id="hidden-lastName" name="lastName" />
@@ -536,43 +542,15 @@ const services = [
 
   // Handle form submission
   const step2Form = document.querySelector('#booking-form-step2');
-  step2Form?.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
+  step2Form?.addEventListener('submit', function(e) {
     // Show loading state
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Wird gesendet...';
     submitBtn.disabled = true;
     
-    try {
-      // Submit form to Getform
-      const formData = new FormData(this);
-      const response = await fetch('https://getform.io/f/bejjgwea', {
-        method: 'POST',
-        body: formData
-      });
-      
-      if (response.ok) {
-        // Success
-        closeModal();
-        // Redirect to thank you page
-        window.location.href = '/danke';
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      // Error - fallback to phone call
-      console.error('Form submission error:', error);
-      alert('❌ Buchung konnte nicht gesendet werden. Bitte rufen Sie uns direkt an: +41 76 560 95 28');
-      
-      // Open phone dialer as fallback
-      window.location.href = 'tel:+41765609528';
-    } finally {
-      // Reset button
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
+    // Form will submit normally to FormSubmit
+    // No need to prevent default - let it submit naturally
   });
 
   // Close modal on escape key
