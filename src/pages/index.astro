@@ -158,17 +158,16 @@ const services = [
             <input type="hidden" name="_template" value="box">
             
             <!-- Action buttons for email -->
-            <input type="hidden" name="aktions_buttons" value="WICHTIG: Bitte antworten Sie dem Kunden:
+            <input type="hidden" name="aktions_buttons" value="🚖 BUCHUNG BEARBEITEN - KLICKEN SIE EINEN BUTTON:
 
-✅ BUCHUNG BESTÄTIGEN:
-Senden Sie eine Email an den Kunden mit:
-Betreff: Buchung bestätigt - UmutTaxi
-Text: Vielen Dank! Ihre Buchung wurde bestätigt. Wir sind pünktlich da.
+📧 Kunde E-Mail: {{e_mail}}
+📞 Kunde Telefon: {{telefon}}
 
-❌ BUCHUNG ABLEHNEN:
-Senden Sie eine Email an den Kunden mit:
-Betreff: Buchung leider nicht möglich - UmutTaxi  
-Text: Leider können wir zu diesem Zeitpunkt nicht verfügbar. Alternativen: [Andere Zeit vorschlagen]">
+🟢 BUCHUNG BESTÄTIGEN - KLICKEN:
+mailto:{{e_mail}}?subject=✅ Buchung bestätigt - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Buchungsanfrage!%0D%0A%0D%0A✅ Ihre Buchung wurde BESTÄTIGT:%0D%0A📅 Datum: {{datum}}%0D%0A⏰ Uhrzeit: {{uhrzeit}}%0D%0A📍 Von: {{abholadresse}}%0D%0A📍 Nach: {{zieladresse}}%0D%0A🚗 Service: {{gewuenschter_service}}%0D%0A%0D%0AWir sind 10 Minuten vor der vereinbarten Zeit da.%0D%0A%0D%0ABei Fragen rufen Sie uns an: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team
+
+🔴 BUCHUNG ABLEHNEN - KLICKEN:
+mailto:{{e_mail}}?subject=❌ Buchung leider nicht möglich - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Buchungsanfrage.%0D%0A%0D%0A❌ Leider können wir zu diesem Zeitpunkt nicht verfügbar sein.%0D%0A%0D%0A💡 Alternative Vorschläge:%0D%0A- Andere Uhrzeit am gleichen Tag%0D%0A- Anderes Datum%0D%0A- Partnerunternehmen Empfehlung%0D%0A%0D%0ABitte rufen Sie uns an für Alternativen: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team">
             
             <!-- Hidden fields for step 1 data -->
             <input type="hidden" id="hidden-firstName" name="vorname" />

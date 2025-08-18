@@ -36,19 +36,20 @@ const { contact } = contactData;
             <!-- FormSubmit configuration -->
             <input type="hidden" name="_next" value="https://taxiumut.ch/danke">
             <input type="hidden" name="_subject" value="📞 Neue Kontaktanfrage - AKTION ERFORDERLICH">
-            <input type="hidden" name="_cc" value="adem.polat03@hotmail.com,tuncaycicek@outlook.com">
+                        <!-- Action buttons for email -->
+            <input type="hidden" name="aktions_buttons" value="🚖 ANFRAGE BEARBEITEN - KLICKEN SIE EINEN BUTTON:
+
+📧 Kunde E-Mail: {{e_mail}}
+📞 Kunde Telefon: {{telefon}}
+
+🟢 ANFRAGE BEANTWORTEN - KLICKEN:
+mailto:{{e_mail}}?subject=✅ Antwort auf Ihre Anfrage - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Anfrage!%0D%0A%0D%0A[Hier Ihre Antwort schreiben]%0D%0A%0D%0ABei weiteren Fragen rufen Sie uns an: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team
+
+📞 TELEFONISCH KONTAKTIEREN - KLICKEN:
+tel:+41765609528">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="box">
-            
-            <!-- Action buttons for email -->
-            <input type="hidden" name="aktions_anweisungen" value="WICHTIG: Bitte kontaktieren Sie den Kunden:
-
-📞 TELEFON: Rufen Sie den Kunden an für direkte Beratung
-📧 EMAIL: Senden Sie eine detaillierte Antwort per Email
-
-Standard Antwort-Vorlage:
-Betreff: Re: Ihre Anfrage - UmutTaxi
-Text: Vielen Dank für Ihre Anfrage. Wir melden uns in Kürze bei Ihnen.">
+            <input type="hidden" name="_cc" value="tuncaycicek@outlook.com">
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
