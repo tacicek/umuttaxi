@@ -145,14 +145,9 @@ const services = [
         <div id="step-2" class="booking-step hidden">
           <h3 class="text-lg font-semibold text-black mb-4">Schritt 2: Fahrtdetails</h3>
           <form 
-            action="https://formspree.io/f/xovqjrqw" 
-            method="POST" 
+            id="booking-form-step2"
             class="space-y-4"
           >
-            <!-- Redirect after successful submission -->
-            <input type="hidden" name="_next" value="https://umuttaxi.ch/danke" />
-            <input type="hidden" name="_subject" value="Neue Taxi-Buchungsanfrage von UmutTaxi Website" />
-            
             <!-- Hidden fields for step 1 data -->
             <input type="hidden" id="hidden-firstName" name="firstName" />
             <input type="hidden" id="hidden-lastName" name="lastName" />
@@ -538,16 +533,48 @@ const services = [
   });
 
   // Handle form submission
-  const step2Form = document.querySelector('#step-2 form');
+  const step2Form = document.querySelector('#booking-form-step2');
   step2Form?.addEventListener('submit', function(e) {
-    // Show loading state
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Wird gesendet...';
-    submitBtn.disabled = true;
+    e.preventDefault();
+    
+    // Get all form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Create email content
+    const subject = `Neue Taxi-Buchungsanfrage von ${data.firstName} ${data.lastName}`;
+    const body = `
+Neue Taxi-Buchungsanfrage:
 
-    // Form will be submitted normally to Formspree
-    // After submission, Formspree will redirect or show confirmation
+Kundendaten:
+- Name: ${data.firstName} ${data.lastName}
+- Telefon: ${data.phone}
+- Email: ${data.email || 'Nicht angegeben'}
+
+Fahrtdetails:
+- Von: ${data.pickup}
+- Nach: ${data.destination}
+- Datum: ${data.date}
+- Uhrzeit: ${data.time}
+- Service: ${data.service || 'Nicht spezifiziert'}
+- Zusätzliche Informationen: ${data.notes || 'Keine'}
+
+Eingereicht am: ${new Date().toLocaleString('de-DE', {
+  timeZone: 'Europe/Zurich'
+})}
+`.trim();
+
+    // Create mailto URL
+    const mailtoURL = `mailto:adem.polat03@hotmail.com,tuncaycicek@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoURL;
+    
+    // Close modal and show success message
+    setTimeout(() => {
+      closeModal();
+      alert('Ihre E-Mail-Anwendung wurde geöffnet. Bitte senden Sie die E-Mail ab oder rufen Sie uns direkt an: +41 76 560 95 28');
+    }, 500);
   });
 
   // Close modal on escape key

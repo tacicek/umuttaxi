@@ -28,14 +28,9 @@ const { contact } = contactData;
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-6">Senden Sie uns eine Nachricht</h2>
           <form 
-            action="https://formspree.io/f/xovqjrqw" 
-            method="POST" 
+            id="contact-form"
             class="space-y-6"
           >
-            <!-- Redirect after successful submission -->
-            <input type="hidden" name="_next" value="https://umuttaxi.ch/danke" />
-            <input type="hidden" name="_subject" value="Neue Kontaktanfrage von UmutTaxi Website" />
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
@@ -211,3 +206,46 @@ const { contact } = contactData;
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Handle contact form submission
+  const contactForm = document.querySelector('#contact-form');
+  contactForm?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get all form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Create email content
+    const subject = `Neue Kontaktanfrage von ${data.name}`;
+    const body = `
+Neue Kontaktanfrage:
+
+Kundendaten:
+- Name: ${data.name}
+- Telefon: ${data.phone}
+- Email: ${data.email || 'Nicht angegeben'}
+
+Fahrtdetails:
+- Von: ${data.pickup}
+- Nach: ${data.destination}
+- Datum/Uhrzeit: ${data.datetime}
+- Service: ${data.service || 'Nicht spezifiziert'}
+- Nachricht: ${data.message || 'Keine'}
+
+Eingereicht am: ${new Date().toLocaleString('de-DE', {
+  timeZone: 'Europe/Zurich'
+})}
+`.trim();
+
+    // Create mailto URL
+    const mailtoURL = `mailto:adem.polat03@hotmail.com,tuncaycicek@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoURL;
+    
+    // Show success message
+    alert('Ihre E-Mail-Anwendung wurde geöffnet. Bitte senden Sie die E-Mail ab oder rufen Sie uns direkt an: +41 76 560 95 28');
+  });
+</script>
