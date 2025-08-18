@@ -6,9 +6,6 @@
 [build.environment]
   NETLIFY_SITE_ID = "polite-praline-4c4b02"
   NODE_VERSION = "18"
-  NETLIFY_EMAILS = "adem.polat03@hotmail.com,tuncaycicek@outlook.com"
-  FORM_EMAIL_TO = "adem.polat03@hotmail.com,tuncaycicek@outlook.com"
-  FORM_EMAIL_FROM = "noreply@umuttaxi.ch"
 
 [context.production]
   command = "npm ci && npm run build"
