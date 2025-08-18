@@ -12,6 +12,15 @@
   command = "npm ci && npm run build"
   publish = "dist"
 
+# Form handling settings
+[[plugins]]
+  package = "@netlify/plugin-functions"
+
+# Email notifications for form submissions
+[build.environment]
+  FORM_EMAIL_TO = "adem.polat03@hotmail.com"
+  FORM_EMAIL_FROM = "noreply@umuttaxi.ch"
+
 [[redirects]]
   from = "/home"
   to = "/"

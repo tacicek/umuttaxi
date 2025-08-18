@@ -145,15 +145,16 @@ const services = [
         <div id="step-2" class="booking-step hidden">
           <h3 class="text-lg font-semibold text-black mb-4">Schritt 2: Fahrtdetails</h3>
           <form 
-            name="hero-booking" 
+            name="taxi-booking" 
             method="POST" 
             data-netlify="true" 
             netlify-honeypot="bot-field"
             action="/danke"
             class="space-y-4"
+            data-netlify-recaptcha="true"
           >
             <!-- Hidden inputs for Netlify -->
-            <input type="hidden" name="form-name" value="hero-booking" />
+            <input type="hidden" name="form-name" value="taxi-booking" />
             <p class="hidden">
               <label>
                 Don't fill this out if you're human: <input name="bot-field" />
@@ -212,11 +213,28 @@ const services = [
                 Buchung senden
               </button>
             </div>
+            
+            <!-- Netlify reCAPTCHA -->
+            <div data-netlify-recaptcha="true"></div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Hidden form for Netlify form detection -->
+  <form name="taxi-booking" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="tel" name="phone" />
+    <input type="email" name="email" />
+    <input type="text" name="pickup" />
+    <input type="text" name="destination" />
+    <input type="date" name="date" />
+    <input type="time" name="time" />
+    <input type="text" name="service" />
+    <textarea name="notes"></textarea>
+  </form>
 
   <!-- Services Overview -->
   <section class="py-16 bg-white">
