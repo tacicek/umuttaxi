@@ -145,21 +145,13 @@ const services = [
         <div id="step-2" class="booking-step hidden">
           <h3 class="text-lg font-semibold text-black mb-4">Schritt 2: Fahrtdetails</h3>
           <form 
-            name="taxi-booking" 
+            action="https://formspree.io/f/xovqjrqw" 
             method="POST" 
-            data-netlify="true" 
-            netlify-honeypot="bot-field"
-            action="/danke"
             class="space-y-4"
-            data-netlify-recaptcha="true"
           >
-            <!-- Hidden inputs for Netlify -->
-            <input type="hidden" name="form-name" value="taxi-booking" />
-            <p class="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
+            <!-- Redirect after successful submission -->
+            <input type="hidden" name="_next" value="https://umuttaxi.ch/danke" />
+            <input type="hidden" name="_subject" value="Neue Taxi-Buchungsanfrage von UmutTaxi Website" />
             
             <!-- Hidden fields for step 1 data -->
             <input type="hidden" id="hidden-firstName" name="firstName" />
@@ -213,28 +205,11 @@ const services = [
                 Buchung senden
               </button>
             </div>
-            
-            <!-- Netlify reCAPTCHA -->
-            <div data-netlify-recaptcha="true"></div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Hidden form for Netlify form detection -->
-  <form name="taxi-booking" netlify netlify-honeypot="bot-field" hidden>
-    <input type="text" name="firstName" />
-    <input type="text" name="lastName" />
-    <input type="tel" name="phone" />
-    <input type="email" name="email" />
-    <input type="text" name="pickup" />
-    <input type="text" name="destination" />
-    <input type="date" name="date" />
-    <input type="time" name="time" />
-    <input type="text" name="service" />
-    <textarea name="notes"></textarea>
-  </form>
 
   <!-- Services Overview -->
   <section class="py-16 bg-white">
@@ -560,6 +535,19 @@ const services = [
   backStepBtn?.addEventListener('click', () => {
     step2?.classList.add('hidden');
     step1?.classList.remove('hidden');
+  });
+
+  // Handle form submission
+  const step2Form = document.querySelector('#step-2 form');
+  step2Form?.addEventListener('submit', function(e) {
+    // Show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Wird gesendet...';
+    submitBtn.disabled = true;
+
+    // Form will be submitted normally to Formspree
+    // After submission, Formspree will redirect or show confirmation
   });
 
   // Close modal on escape key
