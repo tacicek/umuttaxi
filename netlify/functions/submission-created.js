@@ -1,4 +1,9 @@
-// Netlify function to handle form submissions
+// Netlify function to handle form submissions and send emails
+const sgMail = require('@sendgrid/mail');
+
+// Set SendGrid API key from environment variable
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 exports.handler = async (event, context) => {
   console.log('Form submission received:', event.body);
   
@@ -9,9 +14,11 @@ exports.handler = async (event, context) => {
     
     let emailContent = '';
     let subject = '';
+    let recipientEmail = '';
     
     if (formName === 'taxi-booking') {
       subject = 'Neue Taxi-Buchungsanfrage von ' + (data.firstName + ' ' + data.lastName);
+      recipientEmail = 'adem.polat03@hotmail.com';
       emailContent = `
 Neue Taxi-Buchungsanfrage:
 
@@ -34,6 +41,7 @@ Eingereicht am: ${new Date().toLocaleString('de-DE', {
 `;
     } else if (formName === 'contact-form') {
       subject = 'Neue Kontaktanfrage von ' + data.name;
+      recipientEmail = 'adem.polat03@hotmail.com';
       emailContent = `
 Neue Kontaktanfrage:
 
@@ -62,23 +70,51 @@ Eingereicht am: ${new Date().toLocaleString('de-DE', {
 
     console.log('Form details:', emailContent);
 
-    // Here you could integrate with an email service like SendGrid, Mailgun, etc.
-    // For now, we just log the submission
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ 
-        message: 'Form submission processed successfully',
-        subject: subject,
-        details: emailContent
-      })
+    // Send email using SendGrid
+    const msg = {
+      to: recipientEmail,
+      cc: ['tuncaycicek@outlook.com'],
+      from: process.env.SENDGRID_FROM_EMAIL || 'noreply@umuttaxi.ch',
+      subject: subject,
+      text: emailContent,
+      html: emailContent.replace(/\n/g, '<br>')
     };
+
+    try {
+      await sgMail.send(msg);
+      console.log('Email sent successfully');
+      
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ 
+          message: 'Form submission processed and email sent successfully',
+          subject: subject,
+          details: emailContent
+        })
+      };
+    } catch (emailError) {
+      console.error('Error sending email:', emailError);
+      
+      // Fallback: return success but log email error
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ 
+          message: 'Form submission processed but email failed to send',
+          error: emailError.message,
+          subject: subject,
+          details: emailContent
+        })
+      };
+    }
     
   } catch (error) {
-    console.error('Error processing form submission:', error);
+    console.error('Error processing submission:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to process form submission' })
+      body: JSON.stringify({ 
+        message: 'Error processing form submission',
+        error: error.message 
+      })
     };
   }
 };

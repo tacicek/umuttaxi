@@ -7,6 +7,11 @@
   NETLIFY_SITE_ID = "polite-praline-4c4b02"
   NODE_VERSION = "18"
 
+# Environment variables for production
+[context.production.environment]
+  SENDGRID_API_KEY = "your_sendgrid_api_key_here"
+  SENDGRID_FROM_EMAIL = "noreply@umuttaxi.ch"
+
 [context.production]
   command = "npm ci && npm run build"
   publish = "dist"

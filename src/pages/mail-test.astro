@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Mail Test - UmutTaxi"
+  description="Test page for mail functionality"
+>
+  <div class="container mx-auto px-4 py-20">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8">Mail Test Sayfası</h1>
+      
+      <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">FormSubmit Test</h2>
+        
+        <form 
+          action="https://formsubmit.co/c24008fc63f4c2f98fc7a8bc15f1f2d5"
+          method="POST"
+          class="space-y-4"
+        >
+          <input type="hidden" name="_next" value="https://taxiumut.ch/danke">
+          <input type="hidden" name="_subject" value="🧪 Mail Test - UmutTaxi">
+          <input type="hidden" name="_cc" value="tuncaycicek@outlook.com">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <div>
+            <label for="testName" class="block text-sm font-medium text-gray-700 mb-2">Test Adı</label>
+            <input type="text" id="testName" name="test_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="Test için bir isim girin">
+          </div>
+          
+          <div>
+            <label for="testMessage" class="block text-sm font-medium text-gray-700 mb-2">Test Mesajı</label>
+            <textarea id="testMessage" name="test_message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="Test mesajı yazın"></textarea>
+          </div>
+          
+          <button type="submit" class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Test Mail Gönder
+          </button>
+        </form>
+      </div>
+      
+      <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">Test Sonuçları:</h3>
+        <ul class="text-blue-800 space-y-2">
+          <li>✅ FormSubmit token aktif</li>
+          <li>📧 Mail adresleri: adem.polat03@hotmail.com, tuncaycicek@outlook.com</li>
+          <li>🔄 Yönlendirme: /danke sayfasına</li>
+          <li>⚠️ FormSubmit ilk kullanımda doğrulama gerekebilir</li>
+        </ul>
+      </div>
+      
+      <div class="mt-8 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+        <h3 class="text-lg font-semibold text-yellow-900 mb-2">Alternatif Çözümler:</h3>
+        <ul class="text-yellow-800 space-y-2">
+          <li>🔧 Netlify Function + SendGrid (kuruldu)</li>
+          <li>📧 Gmail SMTP entegrasyonu</li>
+          <li>📨 Mailgun servisi</li>
+          <li>📤 AWS SES entegrasyonu</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
