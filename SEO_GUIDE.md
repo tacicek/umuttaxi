@@ -102,13 +102,13 @@
 - ✅ "Taxi Zürich"
 - ✅ "Flughafentransfer Zürich"
 - ✅ "Limousinenservice Schweiz"
-- ✅ "Schülertransport Schwarztenbach"
+- ✅ "Schülertransport Schwerzenbach"
 - ✅ "Hoteltransfer Zürich"
 
 ## 📝 Content SEO
 
 ### **Page Titles**
-- ✅ Ana sayfa: "UmutTaxi - Premium Taxiservice Zürich-Schwarztenbach"
+- ✅ Ana sayfa: "UmutTaxi - Premium Taxiservice Zürich-Schwerzenbach"
 - ✅ Hizmet sayfaları: "[Hizmet Adı] - UmutTaxi"
 - ✅ Hakkımızda: "Über uns - UmutTaxi"
 - ✅ İletişim: "Kontakt - UmutTaxi"
@@ -178,7 +178,7 @@
 - "Hoteltransfer Zürich"
 
 ### **Long-tail Keywords**
-- "Premium Taxiservice Zürich-Schwarztenbach"
+- "Premium Taxiservice Zürich-Schwerzenbach"
 - "Flughafen Zürich Taxi Service"
 - "Luxus Limousine Zürich"
 - "Sicherer Schülertransport Schweiz"

@@ -108,7 +108,7 @@ Create a `.env.local` file for local development:
 # Site Configuration
 SITE_URL=http://localhost:4321
 SITE_NAME=UmutTaxi
-SITE_DESCRIPTION=Premium Taxiservice in Zürich-Schwarztenbach
+SITE_DESCRIPTION=Premium Taxiservice in Zürich-Schwerzenbach
 
 # Contact Information
 CONTACT_PHONE=+41441234567

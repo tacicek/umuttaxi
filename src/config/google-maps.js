@@ -6,7 +6,7 @@ export const GOOGLE_MAPS_CONFIG = {
   // Replace this with your actual Google Maps JavaScript API key
   apiKey: 'YOUR_GOOGLE_MAPS_API_KEY_HERE', // Get from Google Cloud Console
   clientId: '691118319740-v6ppj9irerj6q6o5aa658muaapqp5mqf.apps.googleusercontent.com',
-  // Zürich-Schwarztenbach coordinates
+  // Zürich-Schwerzenbach coordinates
   defaultLocation: {
     lat: 47.3769,
     lng: 8.5417,

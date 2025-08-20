@@ -25,7 +25,7 @@ Das Projekt integriert Google Maps für die Standortanzeige:
 ### Konfiguration
 - **API Key**: Erforderlich für Google Maps JavaScript API
 - **Client ID**: `691118319740-v6ppj9irerj6q6o5aa658muaapqp5mqf.apps.googleusercontent.com`
-- **Standort**: Zürich-Schwarztenbach (47.3769, 8.5417)
+- **Standort**: Zürich-Schwerzenbach (47.3769, 8.5417)
 - **Standort**: Zürich-Schwerzenbach (47.3769, 8.5417)
 
 ### Google Maps API Key einrichten
@@ -218,7 +218,7 @@ Das Design-System verwendet eine angepasste Farbpalette:
 
 ### Google Maps
 - **API Key**: Konfiguriert in `src/config/google-maps.js`
-- **Default Location**: Zürich-Schwarztenbach
+- **Default Location**: Zürich-Schwerzenbach
 - **Custom Marker**: UmutTaxi Branding
 - **Info Windows**: Firmeninformationen
 
