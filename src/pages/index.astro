@@ -483,145 +483,147 @@ mailto:{{e_mail}}?subject=❌ Buchung leider nicht möglich - UmutTaxi&body=Lieb
 
 <script>
   // Booking form functionality
-  const openFormBtn = document.getElementById('open-booking-form');
-  const closeFormBtn = document.getElementById('close-booking-form');
-  const modal = document.getElementById('booking-modal');
-  const step1 = document.getElementById('step-1');
-  const step2 = document.getElementById('step-2');
-  const nextStepBtn = document.getElementById('next-step');
-  const backStepBtn = document.getElementById('back-step');
-  const form1 = document.getElementById('booking-form-step1');
+  document.addEventListener('DOMContentLoaded', function() {
+    const openFormBtn = document.getElementById('open-booking-form');
+    const closeFormBtn = document.getElementById('close-booking-form');
+    const modal = document.getElementById('booking-modal');
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const nextStepBtn = document.getElementById('next-step');
+    const backStepBtn = document.getElementById('back-step');
+    const form1 = document.getElementById('booking-form-step1');
 
-  // Open modal
-  openFormBtn?.addEventListener('click', () => {
-    modal?.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-    
-    // Initialize date input after modal is visible
-    setTimeout(() => {
-      const dateInput = document.getElementById('date');
-      if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.min = today;
-        dateInput.value = today;
-      }
-    }, 100);
-  });
-
-  // Close modal
-  const closeModal = () => {
-    modal?.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-    // Reset to step 1
-    step1?.classList.remove('hidden');
-    step2?.classList.add('hidden');
-    form1?.reset();
-  };
-
-  closeFormBtn?.addEventListener('click', closeModal);
-  
-  // Close on backdrop click
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Next step
-  nextStepBtn?.addEventListener('click', () => {
-    const formData = new FormData(form1);
-    const firstName = formData.get('firstName');
-    const lastName = formData.get('lastName');
-    const phone = formData.get('phone');
-    const email = formData.get('email');
-
-    if (!firstName || !lastName || !phone) {
-      alert('Bitte füllen Sie alle Pflichtfelder aus.');
-      return;
-    }
-
-    // Transfer data to hidden fields
-    const hiddenFirstName = document.getElementById('hidden-firstName');
-    const hiddenLastName = document.getElementById('hidden-lastName');
-    const hiddenPhone = document.getElementById('hidden-phone');
-    const hiddenEmail = document.getElementById('hidden-email');
-    
-    if (hiddenFirstName && hiddenLastName && hiddenPhone && hiddenEmail) {
-      hiddenFirstName.value = firstName;
-      hiddenLastName.value = lastName;
-      hiddenPhone.value = phone;
-      hiddenEmail.value = email || '';
+    // Open modal
+    openFormBtn?.addEventListener('click', () => {
+      modal?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
       
-      // Show step 2
-      step1?.classList.add('hidden');
-      step2?.classList.remove('hidden');
-    } else {
-      console.error('Hidden fields not found');
-      alert('Form error. Please try again.');
-    }
-  });
-
-  // Back step
-  backStepBtn?.addEventListener('click', () => {
-    step2?.classList.add('hidden');
-    step1?.classList.remove('hidden');
-  });
-
-  // Handle form submission
-  const step2Form = document.querySelector('#booking-form-step2');
-  step2Form?.addEventListener('submit', function(e) {
-    // Show loading state
-    const submitBtn = this.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Wird gesendet...';
-      submitBtn.disabled = true;
-      
-      // Reset button after a delay (in case of error)
+      // Initialize date input after modal is visible
       setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, 5000);
-    }
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+          const today = new Date().toISOString().split('T')[0];
+          dateInput.min = today;
+          dateInput.value = today;
+        }
+      }, 100);
+    });
+
+    // Close modal
+    const closeModal = () => {
+      modal?.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+      // Reset to step 1
+      step1?.classList.remove('hidden');
+      step2?.classList.add('hidden');
+      form1?.reset();
+    };
+
+    closeFormBtn?.addEventListener('click', closeModal);
     
-    // Form will submit normally to FormSubmit
-    // No need to prevent default - let it submit naturally
-  });
+    // Close on backdrop click
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
 
-  // Close modal on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
-      closeModal();
-    }
-  });
+    // Next step
+    nextStepBtn?.addEventListener('click', () => {
+      const formData = new FormData(form1);
+      const firstName = formData.get('firstName');
+      const lastName = formData.get('lastName');
+      const phone = formData.get('phone');
+      const email = formData.get('email');
 
-  // Initialize Google Places Autocomplete
-  function initAutocomplete() {
-    if (typeof (window as any).google !== 'undefined' && (window as any).google.maps && (window as any).google.maps.places) {
-      const pickupInput = document.getElementById('pickup') as HTMLInputElement;
-      const destinationInput = document.getElementById('destination') as HTMLInputElement;
+      if (!firstName || !lastName || !phone) {
+        alert('Bitte füllen Sie alle Pflichtfelder aus.');
+        return;
+      }
+
+      // Transfer data to hidden fields
+      const hiddenFirstName = document.getElementById('hidden-firstName');
+      const hiddenLastName = document.getElementById('hidden-lastName');
+      const hiddenPhone = document.getElementById('hidden-phone');
+      const hiddenEmail = document.getElementById('hidden-email');
       
-      if (pickupInput && destinationInput) {
-        // Create autocomplete objects for Switzerland and surrounding areas
-        const options = {
-          types: ['address'],
-          componentRestrictions: { country: ['ch', 'de', 'at', 'fr', 'it'] },
-          language: 'de'
-        };
+      if (hiddenFirstName && hiddenLastName && hiddenPhone && hiddenEmail) {
+        hiddenFirstName.value = firstName;
+        hiddenLastName.value = lastName;
+        hiddenPhone.value = phone;
+        hiddenEmail.value = email || '';
         
-        new (window as any).google.maps.places.Autocomplete(pickupInput, options);
-        new (window as any).google.maps.places.Autocomplete(destinationInput, options);
+        // Show step 2
+        step1?.classList.add('hidden');
+        step2?.classList.remove('hidden');
+      } else {
+        console.error('Hidden fields not found');
+        alert('Form error. Please try again.');
+      }
+    });
+
+    // Back step
+    backStepBtn?.addEventListener('click', () => {
+      step2?.classList.add('hidden');
+      step1?.classList.remove('hidden');
+    });
+
+    // Handle form submission
+    const step2Form = document.querySelector('#booking-form-step2');
+    step2Form?.addEventListener('submit', function(e) {
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Wird gesendet...';
+        submitBtn.disabled = true;
+        
+        // Reset button after a delay (in case of error)
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 5000);
+      }
+      
+      // Form will submit normally to FormSubmit
+      // No need to prevent default - let it submit naturally
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Initialize Google Places Autocomplete
+    function initAutocomplete() {
+      if (typeof window.google !== 'undefined' && window.google.maps && window.google.maps.places) {
+        const pickupInput = document.getElementById('pickup');
+        const destinationInput = document.getElementById('destination');
+        
+        if (pickupInput && destinationInput) {
+          // Create autocomplete objects for Switzerland and surrounding areas
+          const options = {
+            types: ['address'],
+            componentRestrictions: { country: ['ch', 'de', 'at', 'fr', 'it'] },
+            language: 'de'
+          };
+          
+          new window.google.maps.places.Autocomplete(pickupInput, options);
+          new window.google.maps.places.Autocomplete(destinationInput, options);
+        }
       }
     }
-  }
 
-  // Initialize autocomplete when Google Maps is loaded
-  if (typeof (window as any).google !== 'undefined') {
-    initAutocomplete();
-  } else {
-    // Wait for Google Maps to load
-    window.addEventListener('load', () => {
-      setTimeout(initAutocomplete, 1000);
-    });
-  }
+    // Initialize autocomplete when Google Maps is loaded
+    if (typeof window.google !== 'undefined') {
+      initAutocomplete();
+    } else {
+      // Wait for Google Maps to load
+      window.addEventListener('load', () => {
+        setTimeout(initAutocomplete, 1000);
+      });
+    }
+  });
 </script>
