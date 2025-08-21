@@ -145,61 +145,51 @@ const services = [
         <div id="step-2" class="booking-step hidden">
           <h3 class="text-lg font-semibold text-black mb-4">Schritt 2: Fahrtdetails</h3>
           <form 
-            action="https://formsubmit.co/tuncaycicek@outlook.com"
+            name="taxi-booking"
             method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             id="booking-form-step2"
             class="space-y-4"
           >
-            <!-- FormSubmit configuration -->
-            <input type="hidden" name="_next" value="https://taxiumut.ch/danke">
-            <input type="hidden" name="_subject" value="🚖 Neue Taxi-Buchungsanfrage - AKTION ERFORDERLICH">
-            <input type="hidden" name="_cc" value="adem.polat03@hotmail.com">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="box">
-            <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Buchungsanfrage! Wir werden uns schnellstmöglich bei Ihnen melden.">
-            
-            <!-- Action buttons for email -->
-            <input type="hidden" name="aktions_buttons" value="🚖 BUCHUNG BEARBEITEN - KLICKEN SIE EINEN BUTTON:
-
-📧 Kunde E-Mail: {{e_mail}}
-📞 Kunde Telefon: {{telefon}}
-
-🟢 BUCHUNG BESTÄTIGEN - KLICKEN:
-mailto:{{e_mail}}?subject=✅ Buchung bestätigt - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Buchungsanfrage!%0D%0A%0D%0A✅ Ihre Buchung wurde BESTÄTIGT:%0D%0A📅 Datum: {{datum}}%0D%0A⏰ Uhrzeit: {{uhrzeit}}%0D%0A📍 Von: {{abholadresse}}%0D%0A📍 Nach: {{zieladresse}}%0D%0A🚗 Service: {{gewuenschter_service}}%0D%0A%0D%0AWir sind 10 Minuten vor der vereinbarten Zeit da.%0D%0A%0D%0ABei Fragen rufen Sie uns an: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team
-
-🔴 BUCHUNG ABLEHNEN - KLICKEN:
-mailto:{{e_mail}}?subject=❌ Buchung leider nicht möglich - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Buchungsanfrage.%0D%0A%0D%0A❌ Leider können wir zu diesem Zeitpunkt nicht verfügbar sein.%0D%0A%0D%0A💡 Alternative Vorschläge:%0D%0A- Andere Uhrzeit am gleichen Tag%0D%0A- Anderes Datum%0D%0A- Partnerunternehmen Empfehlung%0D%0A%0D%0ABitte rufen Sie uns an für Alternativen: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team">
+            <!-- Netlify Forms configuration -->
+            <input type="hidden" name="form-name" value="taxi-booking" />
+            <p class="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
             
             <!-- Hidden fields for step 1 data -->
-            <input type="hidden" id="hidden-firstName" name="vorname" value="" />
-            <input type="hidden" id="hidden-lastName" name="nachname" value="" />
-            <input type="hidden" id="hidden-phone" name="telefon" value="" />
-            <input type="hidden" id="hidden-email" name="e_mail" value="" />
+            <input type="hidden" id="hidden-firstName" name="firstName" value="" />
+            <input type="hidden" id="hidden-lastName" name="lastName" value="" />
+            <input type="hidden" id="hidden-phone" name="phone" value="" />
+            <input type="hidden" id="hidden-email" name="email" value="" />
             
             <div>
               <label for="pickup" class="block text-sm font-medium text-gray-700 mb-1">Abholadresse *</label>
-              <input type="text" id="pickup" name="abholadresse" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="z.B. Bahnhofstrasse 1, Zürich" autocomplete="off">
+              <input type="text" id="pickup" name="pickup" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="z.B. Bahnhofstrasse 1, Zürich" autocomplete="off">
             </div>
             
             <div>
               <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Zieladresse *</label>
-              <input type="text" id="destination" name="zieladresse" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="z.B. Flughafen Zürich" autocomplete="off">
+              <input type="text" id="destination" name="destination" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="z.B. Flughafen Zürich" autocomplete="off">
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Datum *</label>
-                <input type="date" id="date" name="datum" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                <input type="date" id="date" name="date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
               </div>
               <div>
                 <label for="time" class="block text-sm font-medium text-gray-700 mb-1">Uhrzeit *</label>
-                <input type="time" id="time" name="uhrzeit" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                <input type="time" id="time" name="time" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
               </div>
             </div>
             
             <div>
               <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Gewünschter Service</label>
-              <select id="service" name="gewuenschter_service" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <select id="service" name="service" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
                 <option value="">Bitte wählen Sie einen Service</option>
                 <option value="flughafentransfer">Flughafentransfer</option>
                 <option value="limousinenservice">Limousinenservice</option>
@@ -211,7 +201,7 @@ mailto:{{e_mail}}?subject=❌ Buchung leider nicht möglich - UmutTaxi&body=Lieb
             
             <div>
               <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Zusätzliche Informationen</label>
-              <textarea id="notes" name="zusaetzliche_informationen" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="z.B. Anzahl Personen, Gepäck, besondere Wünsche..."></textarea>
+              <textarea id="notes" name="notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="z.B. Anzahl Personen, Gepäck, besondere Wünsche..."></textarea>
             </div>
             
             <div class="flex gap-3">
@@ -572,22 +562,38 @@ mailto:{{e_mail}}?subject=❌ Buchung leider nicht möglich - UmutTaxi&body=Lieb
     // Handle form submission
     const step2Form = document.querySelector('#booking-form-step2');
     step2Form?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
       // Show loading state
       const submitBtn = this.querySelector('button[type="submit"]');
       if (submitBtn) {
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Wird gesendet...';
         submitBtn.disabled = true;
-        
-        // Reset button after a delay (in case of error)
-        setTimeout(() => {
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }, 5000);
       }
       
-      // Form will submit normally to FormSubmit
-      // No need to prevent default - let it submit naturally
+      // Submit form data
+      const formData = new FormData(this);
+      
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
+        // Redirect to thank you page
+        window.location.href = '/danke';
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Es gab einen Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
+        
+        // Reset button
+        if (submitBtn) {
+          submitBtn.textContent = 'Buchung senden';
+          submitBtn.disabled = false;
+        }
+      });
     });
 
     // Close modal on escape key

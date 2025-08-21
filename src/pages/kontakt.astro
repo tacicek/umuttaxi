@@ -28,63 +28,55 @@ const { contact } = contactData;
         <div>
           <h2 class="text-3xl font-bold text-gray-900 mb-6">Senden Sie uns eine Nachricht</h2>
           <form 
-            action="https://formsubmit.co/tuncaycicek@outlook.com"
+            name="contact-form"
             method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             id="contact-form"
             class="space-y-6"
           >
-            <!-- FormSubmit configuration -->
-            <input type="hidden" name="_next" value="https://taxiumut.ch/danke">
-            <input type="hidden" name="_subject" value="📞 Neue Kontaktanfrage - AKTION ERFORDERLICH">
-            <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Kontaktanfrage! Wir werden uns schnellstmöglich bei Ihnen melden.">
-                        <!-- Action buttons for email -->
-            <input type="hidden" name="aktions_buttons" value="🚖 ANFRAGE BEARBEITEN - KLICKEN SIE EINEN BUTTON:
-
-📧 Kunde E-Mail: {{e_mail}}
-📞 Kunde Telefon: {{telefon}}
-
-🟢 ANFRAGE BEANTWORTEN - KLICKEN:
-mailto:{{e_mail}}?subject=✅ Antwort auf Ihre Anfrage - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Anfrage!%0D%0A%0D%0A[Hier Ihre Antwort schreiben]%0D%0A%0D%0ABei weiteren Fragen rufen Sie uns an: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team
-
-📞 TELEFONISCH KONTAKTIEREN - KLICKEN:
-tel:+41765609528">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="box">
+            <!-- Netlify Forms configuration -->
+            <input type="hidden" name="form-name" value="contact-form" />
+            <p class="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                <input type="text" id="name" name="vollname" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
               </div>
               <div>
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefonnummer *</label>
-                <input type="tel" id="phone" name="telefonnummer" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
               </div>
             </div>
             
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail</label>
-              <input type="email" id="email" name="e_mail_adresse" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
             </div>
             
             <div>
               <label for="pickup" class="block text-sm font-medium text-gray-700 mb-2">Abholadresse *</label>
-              <input type="text" id="pickup" name="abholadresse" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" autocomplete="off">
+              <input type="text" id="pickup" name="pickup" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" autocomplete="off">
             </div>
             
             <div>
               <label for="destination" class="block text-sm font-medium text-gray-700 mb-2">Zieladresse *</label>
-              <input type="text" id="destination" name="zieladresse" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" autocomplete="off">
+              <input type="text" id="destination" name="destination" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" autocomplete="off">
             </div>
             
             <div>
               <label for="datetime" class="block text-sm font-medium text-gray-700 mb-2">Datum und Uhrzeit *</label>
-              <input type="datetime-local" id="datetime" name="datum_und_uhrzeit" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <input type="datetime-local" id="datetime" name="datetime" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
             </div>
             
             <div>
               <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Gewünschter Service</label>
-              <select id="service" name="gewuenschter_service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+              <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
                 <option value="">Bitte wählen Sie einen Service</option>
                 <option value="flughafentransfer">Flughafentransfer</option>
                 <option value="limousinenservice">Limousinenservice</option>
@@ -95,7 +87,7 @@ tel:+41765609528">
             
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Nachricht</label>
-              <textarea id="message" name="nachricht" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"></textarea>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"></textarea>
             </div>
             
             <button type="submit" class="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
@@ -231,14 +223,38 @@ tel:+41765609528">
   // Handle contact form submission
   const contactForm = document.querySelector('#contact-form');
   contactForm?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
     // Show loading state
     const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Wird gesendet...';
-    submitBtn.disabled = true;
+    if (submitBtn) {
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Wird gesendet...';
+      submitBtn.disabled = true;
+    }
     
-    // Form will submit normally to FormSubmit
-    // No need to prevent default - let it submit naturally
+    // Submit form data
+    const formData = new FormData(this);
+    
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      // Redirect to thank you page
+      window.location.href = '/danke';
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      alert('Es gab einen Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
+      
+      // Reset button
+      if (submitBtn) {
+        submitBtn.textContent = 'Nachricht senden';
+        submitBtn.disabled = false;
+      }
+    });
   });
 
   // Initialize Google Places Autocomplete for contact form
