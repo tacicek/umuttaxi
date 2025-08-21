@@ -151,7 +151,7 @@ const services = [
             class="space-y-4"
           >
             <!-- FormSubmit configuration -->
-            <input type="hidden" name="_next" value="https://iridescent-biscuit-e6b9b0.netlify.app/danke">
+            <input type="hidden" name="_next" value="https://taxiumut.ch/danke">
             <input type="hidden" name="_subject" value="🚖 Neue Taxi-Buchungsanfrage - AKTION ERFORDERLICH">
             <input type="hidden" name="_cc" value="adem.polat03@hotmail.com,tuncaycicek@outlook.com">
             <input type="hidden" name="_captcha" value="false">
@@ -171,10 +171,10 @@ mailto:{{e_mail}}?subject=✅ Buchung bestätigt - UmutTaxi&body=Liebe/r {{vorna
 mailto:{{e_mail}}?subject=❌ Buchung leider nicht möglich - UmutTaxi&body=Liebe/r {{vorname}} {{nachname}},%0D%0A%0D%0AVielen Dank für Ihre Buchungsanfrage.%0D%0A%0D%0A❌ Leider können wir zu diesem Zeitpunkt nicht verfügbar sein.%0D%0A%0D%0A💡 Alternative Vorschläge:%0D%0A- Andere Uhrzeit am gleichen Tag%0D%0A- Anderes Datum%0D%0A- Partnerunternehmen Empfehlung%0D%0A%0D%0ABitte rufen Sie uns an für Alternativen: +41 76 560 95 28%0D%0A%0D%0AFreundliche Grüße%0D%0AUmutTaxi Team">
             
             <!-- Hidden fields for step 1 data -->
-            <input type="hidden" id="hidden-firstName" name="vorname" />
-            <input type="hidden" id="hidden-lastName" name="nachname" />
-            <input type="hidden" id="hidden-phone" name="telefon" />
-            <input type="hidden" id="hidden-email" name="e_mail" />
+            <input type="hidden" id="hidden-firstName" name="vorname" value="" />
+            <input type="hidden" id="hidden-lastName" name="nachname" value="" />
+            <input type="hidden" id="hidden-phone" name="telefon" value="" />
+            <input type="hidden" id="hidden-email" name="e_mail" value="" />
             
             <div>
               <label for="pickup" class="block text-sm font-medium text-gray-700 mb-1">Abholadresse *</label>
