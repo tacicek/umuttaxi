@@ -270,6 +270,12 @@ UmutTaxi - Premium Service
 📞 NEUE KONTAKTANFRAGE
 =====================
 
+🚀 HIZLI CEVAP İÇİN:
+📞 Direkt arama: ${data.phone || 'müşteri telefonu'}
+📧 Email cevap: ${data.email || 'müşteri email adresi'}
+
+=====================
+
 👤 KONTAKTDATEN:
 Name: ${data.name || 'Nicht angegeben'}
 Telefon: ${data.phone || 'Nicht angegeben'}
