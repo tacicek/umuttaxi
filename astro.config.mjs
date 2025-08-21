@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://taxiumut.ch',
+  site: 'https://tacicek-umuttaxi-imp-w6kq.bolt.host',
   base: '/',
   trailingSlash: 'never',
   build: {
