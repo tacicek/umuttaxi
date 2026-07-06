@@ -155,10 +155,11 @@ const { contact } = contactData;
         <!-- Quick Contact Form -->
         <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
           <h3 class="text-lg font-semibold text-black mb-4">Schnelle Anfrage</h3>
-          <form 
-            name="service-inquiry" 
-            method="POST" 
-            data-netlify="true" 
+          <form
+            id="service-inquiry-form"
+            name="service-inquiry"
+            method="POST"
+            action="/api/submit"
             netlify-honeypot="bot-field"
             class="space-y-4"
           >
@@ -204,4 +205,39 @@ const { contact } = contactData;
       </div>
     </div>
   </div>
+
+  <script>
+    // Submit the quick-inquiry form to the SendGrid endpoint and redirect to
+    // the thank-you page. Falls back to a native POST (also to /api/submit) if
+    // JS is unavailable.
+    const inquiryForm = document.querySelector('#service-inquiry-form');
+    inquiryForm?.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const submitBtn = this.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = 'Wird gesendet...';
+        submitBtn.disabled = true;
+      }
+
+      const formData = new FormData(this);
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('Request failed');
+          window.location.href = '/danke';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Es gab einen Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
+          if (submitBtn) {
+            submitBtn.textContent = 'Anfrage senden';
+            submitBtn.disabled = false;
+          }
+        });
+    });
+  </script>
 </BaseLayout>

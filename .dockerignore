@@ -1,0 +1,14 @@
+node_modules
+dist
+.output
+.git
+.astro
+.env
+.env.*
+*.log
+.DS_Store
+.vscode
+.idea
+netlify
+netlify.toml
+vercel.json
