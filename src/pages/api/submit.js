@@ -410,7 +410,7 @@ export async function POST({ request }) {
     const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'UmutTaxi <noreply@umuttaxi.ch>',
+      from: process.env.RESEND_FROM_EMAIL || 'UmutTaxi <info@taxiumut.ch>',
       to: RECIPIENT,
       cc: CC,
       replyTo: data.email || undefined,

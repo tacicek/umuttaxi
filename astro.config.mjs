@@ -4,8 +4,8 @@ import node from '@astrojs/node';
 
 export default defineConfig({
   integrations: [tailwind()],
-  // TODO: set this to your final Coolify domain (e.g. https://taxiumut.ch)
-  site: process.env.SITE_URL || 'https://tacicek-umuttaxi-imp-w6kq.bolt.host',
+  // Final production domain; override per-environment via SITE_URL if needed.
+  site: process.env.SITE_URL || 'https://taxiumut.ch',
   base: '/',
   trailingSlash: 'never',
   // Hybrid: every page is prerendered (static) by default; only routes that opt
