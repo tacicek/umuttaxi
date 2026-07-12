@@ -10,8 +10,12 @@ import { Resend } from 'resend';
 // This route must run on the server, not be prerendered.
 export const prerender = false;
 
-const RECIPIENT = 'tuncaycicek@outlook.com';
-const CC = ['adem.polat03@hotmail.com'];
+// Where form notifications are delivered. Overridable via env for flexibility.
+const RECIPIENT = process.env.MAIL_TO || 'info@taxiumut.ch';
+const CC = (process.env.MAIL_CC || '')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
 
 function buildEmail(data) {
   const currentDate = new Date().toLocaleString('de-DE', {
@@ -412,7 +416,7 @@ export async function POST({ request }) {
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'UmutTaxi <info@taxiumut.ch>',
       to: RECIPIENT,
-      cc: CC,
+      cc: CC.length ? CC : undefined,
       replyTo: data.email || undefined,
       subject,
       text: emailText,
