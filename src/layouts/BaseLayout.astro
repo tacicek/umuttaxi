@@ -1,5 +1,8 @@
 ---
 import contactData from '../config/contact.json';
+// Bundled by Astro (hashed, served in production). A raw <link> to
+// /src/styles/global.css only works in dev and 404s in the built site.
+import '../styles/global.css';
 
 export interface Props {
   title: string;
@@ -139,9 +142,6 @@ const structuredData = {
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/src/styles/global.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
