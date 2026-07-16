@@ -258,33 +258,5 @@ const { contact } = contactData;
     });
   });
 
-  // Initialize Google Places Autocomplete for contact form
-  function initContactAutocomplete() {
-    if (typeof google !== 'undefined' && google.maps && google.maps.places) {
-      const pickupInput = document.getElementById('pickup');
-      const destinationInput = document.getElementById('destination');
-      
-      if (pickupInput && destinationInput) {
-        // Create autocomplete objects for Switzerland and surrounding areas
-        const options = {
-          types: ['address'],
-          componentRestrictions: { country: ['ch', 'de', 'at', 'fr', 'it'] },
-          language: 'de'
-        };
-        
-        new google.maps.places.Autocomplete(pickupInput, options);
-        new google.maps.places.Autocomplete(destinationInput, options);
-      }
-    }
-  }
-
-  // Initialize autocomplete when Google Maps is loaded
-  if (typeof google !== 'undefined') {
-    initContactAutocomplete();
-  } else {
-    // Wait for Google Maps to load
-    window.addEventListener('load', () => {
-      setTimeout(initContactAutocomplete, 1000);
-    });
-  }
+  // Address autocomplete disabled — customers enter pickup/destination manually.
 </script>
